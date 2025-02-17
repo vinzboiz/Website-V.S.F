@@ -1,0 +1,134 @@
+/* Footer tổng thể */
+.footer-container {
+  background-color: #f4f5f5;
+  padding: 40px 0 0;
+  font-family: Arial, sans-serif;
+  font-size: 0.65rem;
+}
+
+/* Bố cục cột trong footer */
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 0 3vw;
+}
+
+/* Cột trong footer */
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 5vh;
+}
+
+/* Tiêu đề của từng cột */
+.footer-column h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 3vh;
+  color: #242424;
+  letter-spacing: 0.3px;
+}
+.footer-column h3 {
+  margin-bottom: 15px;
+  color: #181818;
+  font-weight: 450;
+  font-size: 0.8rem;
+  letter-spacing: 0.3px;
+}
+/* Danh sách trong từng cột */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: #181818;
+  font-weight: 450;
+  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
+  line-height: 3vh;
+}
+
+.footer-column ul li a:hover {
+  color: #000;
+}
+.subscribe-button {
+  padding: 1.4vh 4.1vw;
+  background-color: #c5291b;
+  border: none;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+.subscribe-button:hover {
+  opacity: 0.8;
+}
+/* Phần Follow Us */
+.follow-us {
+  margin-top: 3vh;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Biểu tượng mạng xã hội */
+.social-icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: start;
+  gap: 1.3vw;
+}
+
+.social-icons img {
+  height: 4vh;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Phần điều khoản & chính sách */
+.footer-bottom {
+  text-align: center;
+  margin-top: 5vh;
+  font-size: 0.7rem;
+  letter-spacing: 0.3px;
+  background-color: white;
+  color: #666;
+  padding: 4vh 0;
+  gap: 1vw;
+  border-top: 1px solid #ddd;
+}
+
+.footer-bottom p a {
+  text-decoration: none;
+  color: #666;
+  transition: 0.2s ease;
+}
+
+.footer-bottom p a:hover {
+  text-decoration: underline;
+}
+
+/* Biểu tượng thanh toán */
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+  margin-top: 5vh;
+}
+
+.payment-icons img {
+  height: 5vh;
+}

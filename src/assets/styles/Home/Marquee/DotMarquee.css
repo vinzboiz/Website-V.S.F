@@ -1,0 +1,33 @@
+.dot-marquee {
+  background: #0c1929;
+  color: #b4975a;
+}
+
+.dot-marquee .shape-circle {
+  color: #b4975a;
+}
+/* Dấu chấm */
+.shape-circle.shape--sm {
+  font-size: 1.2vw;
+  font-weight: bold;
+  padding: 0 2vw;
+}
+/*------------------------RESPONSIVE-------------------------------*/
+
+/* 🌟 Desktop - giữ nguyên */
+@media (min-width: 1025px) {
+}
+
+/* 🌟 Tablet (iPad) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .shape-circle.shape--sm {
+    font-size: 1.7vw;
+  }
+}
+
+/* 🌟 Mobile (≤ 599px) */
+@media (max-width: 599px) {
+  .shape-circle.shape--sm {
+    font-size: 2vw;
+  }
+}

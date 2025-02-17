@@ -1,0 +1,568 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🌟 Container chính */
+.container {
+  position: relative;
+}
+
+/* 🌟 Logo */
+.logo-container {
+  position: absolute;
+  top: 12.5vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 50;
+  padding: 1vh 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.logo-container.sticky {
+  position: fixed;
+  top: 4.5vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1vh 2vw;
+}
+
+/* 🌟 Navbar chính */
+.navbar-container {
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  width: 100%;
+  z-index: 49;
+  padding: 1vh 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-container.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.2vh 2vw;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌟 Icon chung */
+.icon {
+  height: 45px;
+  width: 45px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+}
+/* 🌟 Hamburger icon (nút 3 gạch) */
+.hamburger-menu-icon {
+  margin-left: 2vw;
+  padding: 10px;
+  height: 45px;
+  width: 45px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Khi hover vào, scale nhẹ */
+.hamburger-menu-icon:hover {
+  transform: scale(1.1);
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* 🌟 Nhóm icon bên phải */
+.icon-list {
+  display: flex;
+  gap: 2.5vw;
+  margin-right: 2vw;
+}
+
+/* 🌟 Icon thanh tìm kiếm */
+.search-icon,
+.user-icon,
+.shopping-bag-icon {
+  padding: 10px;
+}
+
+/* 🔥 Hiệu ứng tìm kiếm */
+.search-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+  margin-right: -2vw;
+}
+
+.search-group.active .search {
+  width: 250px;
+  border: 2px solid #b4975a;
+  border-radius: 17px;
+  padding: 1px 12px;
+  background: white;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease-in-out;
+}
+.search-group.active .search:hover {
+  border-color: #8a6f38;
+}
+.search-group.active .search:focus {
+  border-color: #8a6f38;
+  outline: none;
+}
+/* 🌟 Thanh tìm kiếm */
+.search {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  padding: 0;
+  width: 0px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  padding: 1.3vh 0.3vw;
+  width: 0;
+  font-size: 2vh;
+  background: transparent;
+  opacity: 0;
+  transition: width 0.6s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.search-group.active input {
+  width: 200px;
+  opacity: 1;
+}
+
+/* 🔥 Hiệu ứng xuất hiện */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.search-group.active .search {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* 🔥 Hiệu ứng overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 101;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.sidebar-menu {
+  position: fixed;
+  top: 50%;
+  left: -100%;
+  transform: translateY(-50%);
+  width: 30vw;
+  height: 80vh;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 2vw;
+  transition: left 1s ease-in-out;
+  z-index: 102;
+  border-radius: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cart-sidebar {
+  position: fixed;
+  top: 50%;
+  right: -100%;
+  transform: translateY(-50%);
+  width: 30vw;
+  height: 90vh;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 2vw;
+  transition: right 1s ease-in-out;
+  z-index: 102;
+  border-radius: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.sidebar-menu.open {
+  left: 1vw;
+}
+
+.cart-sidebar.open {
+  right: 1vw;
+}
+.icon-sidebar-container {
+  display: flex;
+  justify-content: space-between; /* Căn giữa logo bên trái và nút đóng bên phải */
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  position: relative;
+}
+
+.icon-sidebar-container .close-icon {
+  position: absolute;
+  top: 0px;
+  right: 0px; /* Luôn giữ ở góc phải */
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+
+.close-icon:hover {
+  transform: rotate(90deg);
+}
+.cart-sidebar .close-icon {
+  position: absolute;
+  top: 25px;
+  left: 25px; /* Luôn giữ ở góc phải */
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+
+.close-icon:hover {
+  transform: rotate(90deg);
+}
+
+/* 🌟 Menu list */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.menu-list li {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu-list li a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu-list li a:hover {
+  color: #b4975a;
+}
+
+/* Biểu tượng mũi tên bên phải */
+.menu-list li span {
+  font-size: 18px;
+  font-weight: bold;
+  color: gray;
+}
+
+/* 🌟 Nội dung giỏ hàng */
+.cart-content {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.cart-content h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 10vh;
+}
+
+/* 🌟 Nút Continue Shopping */
+.continue-shopping-btn {
+  background: black;
+  color: white;
+  padding: 2.8vh 2.8vw;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.5s ease-in-out;
+}
+
+.continue-shopping-btn:hover {
+  background: rgb(83, 83, 83);
+}
+
+/* Khi sidebar mở */
+.sidebar-menu.open {
+  left: 0;
+}
+.cart-sidebar.open {
+  right: 0;
+}
+
+/* 🎨 Định dạng thanh cuộn cho máy tính */
+@media (min-width: 1024px) {
+  .sidebar-menu::-webkit-scrollbar,
+  .cart-sidebar::-webkit-scrollbar {
+    width: 8px; /* Tăng kích thước nhẹ để dễ cuộn hơn */
+  }
+
+  .sidebar-menu::-webkit-scrollbar-track,
+  .cart-sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Màu nền thanh cuộn */
+    border-radius: 10px;
+  }
+
+  .sidebar-menu::-webkit-scrollbar-thumb,
+  .cart-sidebar::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      45deg,
+      #b4975a,
+      #8a6f38
+    ); /* Hiệu ứng gradient */
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+  }
+
+  /* Hiệu ứng hover */
+  .sidebar-menu::-webkit-scrollbar-thumb:hover,
+  .cart-sidebar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #8a6f38, #6a5528);
+  }
+}
+
+/* 🌟 Định dạng sidebar trên mobile */
+@media (max-width: 599px) {
+  .sidebar-menu,
+  .cart-sidebar {
+    width: 85vw; /* Tăng kích thước nhẹ cho dễ sử dụng */
+    border-radius: 12px; /* Bo góc mềm mại hơn */
+    padding: 3vw; /* Tăng khoảng cách nội dung bên trong */
+  }
+}
+
+/* 🌟 Cải thiện hiệu ứng sidebar */
+.sidebar-menu,
+.cart-sidebar {
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Tạo độ sâu nhẹ */
+  backdrop-filter: blur(8px); /* Hiệu ứng blur giúp mềm mại hơn */
+}
+
+/* 🔥 Hiệu ứng hover khi mở sidebar */
+.sidebar-menu.open,
+.cart-sidebar.open {
+  animation: slideIn 0.5s ease-in-out; /* Hiệu ứng khi mở */
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%) translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+/*------------------------RESPONSIVE-------------------------------*/
+
+/* 🌟 Desktop - giữ nguyên */
+@media (min-width: 1025px) {
+  .desktop-only {
+    display: block;
+  }
+  .logo-mobile-ipad-only {
+    display: none;
+  }
+  .search-mobile-ipad-only {
+    display: none;
+  }
+  .search-mobile-ipad-title {
+    display: none;
+  }
+  .navbar-mobile-ipad {
+    display: none;
+  }
+  .mobile-ipad-icon-group-sidebar {
+    display: none;
+  }
+}
+
+/* 🌟 Tablet (iPad) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .desktop-only {
+    display: none; /* Ẩn icon Search & User, giữ lại menu + cart */
+  }
+
+  /* 🔹 Navbar luôn cố định khi cuộn */
+  .navbar-container {
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* 🔹 Giữ icon menu và giỏ hàng trên Navbar */
+  .icon-list {
+    display: flex;
+    gap: 20px;
+  }
+
+  .search-mobile-ipad-only {
+    display: block;
+    width: 100%;
+    border: 2px solid #b4975a;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    margin: 2vh -0.6vw;
+    transition: 0, 3s ease-in-out;
+  }
+  .search-mobile-ipad-only:hover {
+    border-color: #8a6f38;
+  }
+  .search-mobile-ipad-only:focus {
+    border-color: #8a6f38;
+    outline: none;
+  }
+  .cart-sidebar,
+  .sidebar-menu {
+    width: 70vw;
+  }
+
+  .search-mobile-ipad-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 1vh 0;
+    display: flex;
+    margin-top: 5vh;
+  }
+  .icon-sidebar-container {
+    margin-bottom: 40px;
+  }
+  .logo-mobile-ipad-only {
+    height: 50px;
+    width: 50px;
+    margin-right: auto;
+    margin-bottom: auto;
+  }
+  .menu-list li {
+    font-size: 1rem;
+  }
+  .menu-list {
+    margin-bottom: auto;
+  }
+}
+
+/* 🌟 Mobile (≤ 599px) */
+@media (max-width: 599px) {
+  .desktop-only {
+    display: none; /* Ẩn Search & User trên Navbar */
+  }
+
+  /* 🔹 Navbar luôn cố định khi cuộn */
+  .navbar-container {
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    width: 100%;
+    padding: 10px 15px;
+    z-index: 100;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* 🔹 Giữ lại icon Menu và Giỏ hàng */
+  .icon-list {
+    display: flex;
+    gap: 20px;
+  }
+
+  .search-mobile-ipad-only {
+    display: block;
+    width: 100%;
+    border: 2px solid #b4975a;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    margin: 2vh -0.6vw;
+    transition: 0, 3s ease-in-out;
+  }
+  .search-mobile-ipad-only:hover {
+    border-color: #8a6f38;
+  }
+  .search-mobile-ipad-only:focus {
+    border-color: #8a6f38;
+    outline: none;
+  }
+  .cart-sidebar,
+  .sidebar-menu {
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .search-mobile-ipad-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-mobile-ipad-only {
+    height: 50px;
+    width: 50px;
+    margin-right: auto;
+  }
+  .icon-sidebar-container {
+    margin-bottom: 40px;
+  }
+  .menu-list li {
+    font-size: 0.9rem;
+  }
+  .menu-list {
+    margin-bottom: auto;
+  }
+}

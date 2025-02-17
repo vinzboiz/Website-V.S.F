@@ -1,0 +1,156 @@
+/* 🖤 Background */
+.brand-background {
+  background: none;
+  margin: 4vh 0;
+  width: 95%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🌟 Container chính */
+.brand-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+/* 🔥 Layout chính */
+.brand-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  width: 100%;
+  height: auto;
+}
+
+/* 🎨 Phần trên - 2 ảnh lớn */
+.brand-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  height: 70vh;
+}
+
+/* 🎨 Phần dưới - 4 ảnh nhỏ */
+.brand-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  height: 30vh;
+}
+
+/* 🖼 Ảnh */
+.brand-item {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.brand-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 🎯 Văn bản tên ảnh */
+.brand-text {
+  position: absolute;
+  bottom: 1.2vh;
+  left: 0.5vw;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  letter-spacing: 2px;
+  opacity: 1;
+  text-transform: uppercase;
+}
+.brand-top .brand-text {
+  font-size: 1.3rem;
+}
+
+/* 🖼 Hiệu ứng hover */
+.brand-item:hover img {
+  transform: scale(1.05);
+}
+
+.brand-item:hover .brand-text {
+  opacity: 1;
+}
+
+/* 🎨 Hiệu ứng mờ trắng cho ảnh cuối cùng */
+.brand-bottom .brand-item:nth-child(4)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* Màu trắng mờ */
+  border-radius: 8px;
+}
+/*------------------------REPONSIVE-------------------------------*/
+
+/* 🌟 Desktop - giữ nguyên */
+@media (min-width: 1025px) {
+}
+
+/* 🌟 Tablet (iPad) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  /* 🎨 Phần trên - 2 ảnh lớn */
+  .brand-top {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* 🎨 Phần dưới - 4 ảnh nhỏ */
+  .brand-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: 70vh;
+  }
+  .brand-top .brand-text {
+    font-size: 2rem;
+  }
+  .brand-bottom .brand-text {
+    font-size: 1rem;
+  }
+}
+/* 🌟 Mobile (≤ 599px) */
+@media (max-width: 599px) {
+  /* 🎨 Phần trên - 2 ảnh lớn */
+  .brand-top {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+  }
+
+  /* 🎨 Phần dưới - 4 ảnh nhỏ */
+  .brand-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100vh;
+  }
+  .brand-top .brand-text {
+    font-size: 1.4rem;
+  }
+  .brand-bottom .brand-text {
+    font-size: 0.8rem;
+  }
+}

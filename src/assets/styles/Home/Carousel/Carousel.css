@@ -1,0 +1,252 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: white;
+}
+
+/* 🌟 Thanh cuộn ngang */
+.carousel-wrapper {
+  display: flex;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* 🌟 Danh sách ảnh (tự mở rộng theo số lượng ảnh) */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 1vw;
+  padding: 7vh 1vw 5vh;
+  margin-left: 5vw;
+  flex-grow: 0;
+}
+
+/* 🖼️ Hiển thị ảnh */
+.carousel-item {
+  flex: 0 0 12vw;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 📌 Ảnh */
+.carousel-item img {
+  width: 14vw;
+  height: 50vh;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+  margin: 0 2vw;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item:hover img {
+  transform: scale(1.15);
+  transform-origin: bottom;
+}
+
+/* 🏷️ Tên ảnh */
+.image-name {
+  cursor: pointer;
+  font-size: 2.7vh;
+  font-weight: bold;
+  margin-top: 8px;
+  color: #333;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+.image-name:hover {
+  transform: scale(1.1);
+}
+/* 🎯 Mũi tên điều hướng */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 10vh;
+  border: none;
+  cursor: pointer;
+  background: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.arrow img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 📍 Vị trí mũi tên */
+.arrow.left {
+  z-index: 10;
+  left: 2vw;
+}
+
+.arrow.right {
+  z-index: 10;
+  right: 2vw;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+/* 🔽 Thanh cuộn ngang */
+.scrollbar-container {
+  width: 85vw;
+  height: 1.5vh;
+  background: #ddd;
+  border-radius: 3px;
+  margin-top: 0vh;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* 🎯 Dot trên thanh cuộn */
+.scrollbar-thumb {
+  width: 10vw;
+  height: 1.5vh;
+  background: #888;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: grab;
+  transition: all 0.3s ease-in-out;
+}
+
+.scrollbar-thumb:active {
+  cursor: grabbing;
+  background: #262626;
+}
+.scrollbar-thumb:hover {
+  cursor: grabbing;
+  background: #262626;
+}
+.more-button {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.more-button:hover {
+  background-color: #878484;
+  transform: scale(1.1);
+}
+/*------------------------REPONSIVE-------------------------------*/
+
+/* 🌟 Desktop - giữ nguyên */
+@media (min-width: 1025px) {
+  .only-desktop {
+    display: block;
+  }
+}
+
+/* 🌟 Tablet (iPad) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .only-desktop {
+    display: none;
+  }
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 1vw;
+    padding: 5vh 1vw 5vh;
+    margin-left: 2vw;
+    flex-grow: 0;
+  }
+  /* 🖼️ Hiển thị ảnh */
+  .carousel-item {
+    flex: 0 0 25vw;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* 📌 Ảnh */
+  .carousel-item img {
+    width: 15vw;
+    height: 34vh;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 2vw;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .carousel-item:hover img {
+    transform: scale(1.15);
+    transform-origin: bottom;
+  }
+
+  /* 🏷️ Tên ảnh */
+  .image-name {
+    cursor: pointer;
+    font-size: 2.7vh;
+    font-weight: bold;
+    margin-top: 8px;
+    color: #333;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+  }
+  .image-name:hover {
+    transform: scale(1.1);
+  }
+}
+
+/* 🌟 Mobile (≤ 599px) */
+@media (max-width: 599px) {
+  .only-desktop {
+    display: none;
+  }
+  /* 🖼️ Hiển thị ảnh */
+  .carousel-item {
+    flex: 0 0 40vw;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* 📌 Ảnh */
+  .carousel-item img {
+    width: 33vw;
+    height: 40vh;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+    margin: 0 2vw;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .carousel-item:hover img {
+    transform: scale(1.15);
+    transform-origin: bottom;
+  }
+
+  /* 🏷️ Tên ảnh */
+  .image-name {
+    cursor: pointer;
+    font-size: 2.7vh;
+    font-weight: bold;
+    margin-top: 8px;
+    color: #333;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+  }
+  .image-name:hover {
+    transform: scale(1.1);
+  }
+}

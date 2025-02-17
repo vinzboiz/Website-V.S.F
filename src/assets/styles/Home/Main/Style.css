@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.introduction-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  text-align: center;
+  background-color: white;
+}
+
+.introduction-container .question {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 5vh;
+  margin-top: 10vh;
+}
+.introduction-container .answer {
+  font-weight: 400;
+  font-size: 1rem;
+  word-spacing: 2px;
+  line-height: 2rem;
+  max-width: 75vw;
+  margin-bottom: 10vh;
+}
+
+.banner-shop {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.banner-shop .banner-image {
+  height: 100%;
+  width: 100%;
+}
+.sell-shop {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  margin: 4vh 0;
+}
+.sell-shop .sell-image {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.old-kit-container {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  margin: 4vh 0;
+}
+.old-kit-container .old-kit-banner {
+  width: 100%;
+  cursor: pointer;
+}
+.old-kit-container .old-kit-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  margin: 4vh 3vw;
+}
+.old-kit-info .old-kit-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.old-kit-info .old-kit-desc {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.old-kit-container .old-kit-button {
+  background-color: black;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding: 1.2vh 2vw;
+  margin-left: 3vw;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.old-kit-container .old-kit-button:hover {
+  transform: scale(1.1);
+}
+/* 🌟 Container chính */
+.feature-section-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Chia thành 4 cột */
+  gap: 2vw; /* Khoảng cách giữa các ô */
+  width: 100%;
+  background: #ffffff;
+  padding: 13vh 2vw;
+  text-align: center;
+}
+
+/* 🎯 Mỗi ô Feature */
+.feature-section-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+.feature-section-item:hover {
+  transform: scale(1.1);
+}
+/* 🏆 Hình ảnh biểu tượng */
+.feature-section-item img {
+  width: 10vw; /* Điều chỉnh kích thước */
+  height: auto;
+  margin-bottom: 5vh;
+}
+
+/* 🔤 Tên tính năng */
+.feature-section-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #5c4f3b; /* Màu vàng nâu giống ảnh */
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+.desc-shop-container {
+  background-color: white;
+  margin-top: 10vh;
+  padding: 15vh 15vw 5vh;
+}
+.desc-shop-container .desc-shop-title {
+  font-size: 5vh;
+  font-weight: 650;
+  text-align: center;
+  margin-bottom: 6vh;
+}
+.desc-shop-container .desc-shop-desc {
+  font-size: 3vh;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 0vh;
+}
+.youtube-container {
+  text-align: center;
+  margin: 0;
+}
+
+.youtube-container {
+  background-color: white;
+}
+/* Video luôn giữ tỷ lệ 16:9 */
+.video-wrapper {
+  position: relative;
+  width: 100%; /* Độ rộng tối đa */
+  margin: 0 auto;
+  padding-top: 56.25%; /* Tỷ lệ 16:9 (9 / 16 = 0.5625) */
+  background-color: white;
+}
+
+/* Iframe được giữ tỷ lệ */
+.video-wrapper iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%, -50%); /* Căn giữa */
+}
+/* 📌 Ảnh cố định ở góc phải dưới */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
+  z-index: 1000;
+}
+/* 🌟 Hiệu ứng khi hover */
+.scroll-to-top:hover {
+  opacity: 1;
+  transform: scale(1.1); /* Phóng to nhẹ khi hover */
+}
+
+/*------------------------REPONSIVE-------------------------------*/
+
+/* 🌟 Desktop - giữ nguyên */
+@media (min-width: 1025px) {
+}
+
+/* 🌟 Tablet (iPad) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .introduction-container {
+    padding: 10vh 5vw;
+  }
+
+  .banner-shop {
+    height: 70vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .banner-shop .banner-image {
+    height: 100%;
+    width: 100%;
+  }
+  .old-kit-info .old-kit-title {
+    font-size: 2rem;
+  }
+  .old-kit-info .old-kit-desc {
+    font-size: 1.2rem;
+  }
+  .old-kit-container .old-kit-button {
+    font-size: 1rem;
+  }
+  .feature-section-container {
+    grid-template-columns: repeat(2, 1fr); /* Chia thành 4 cột */
+  }
+  /* 🏆 Hình ảnh biểu tượng */
+  .feature-section-item img {
+    width: 13vw; /* Điều chỉnh kích thước */
+  }
+
+  /* 🔤 Tên tính năng */
+  .feature-section-name {
+    font-size: 0.8rem;
+  }
+  .desc-shop-container {
+    padding: 13vh 7vw 5vh;
+  }
+  .desc-shop-container .desc-shop-title {
+    font-size: 1.5rem;
+  }
+  .desc-shop-container .desc-shop-desc {
+    font-size: 1rem;
+  }
+}
+
+/* 🌟 Mobile (≤ 599px) */
+@media (max-width: 599px) {
+  .introduction-container {
+    padding: 10vh 3.5vw;
+  }
+  .banner-shop {
+    height: 40vh;
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+    object-position: top;
+  }
+  .banner-shop .banner-image {
+    height: 100%;
+    width: 100%;
+  }
+  .old-kit-info .old-kit-title {
+    font-size: 1.8rem;
+  }
+  .old-kit-info .old-kit-desc {
+    font-size: 1rem;
+  }
+  .old-kit-container .old-kit-button {
+    font-size: 0.8rem;
+  }
+  .feature-section-container {
+    grid-template-columns: repeat(1, 1fr); /* Chia thành 4 cột */
+    gap: 8vh;
+  }
+  /* 🏆 Hình ảnh biểu tượng */
+  .feature-section-item img {
+    width: 20vw; /* Điều chỉnh kích thước */
+  }
+
+  /* 🔤 Tên tính năng */
+  .feature-section-name {
+    font-size: 1rem;
+  }
+  .desc-shop-container {
+    padding: 13vh 7vw 5vh;
+  }
+  .desc-shop-container .desc-shop-title {
+    font-size: 1.3rem;
+  }
+  .desc-shop-container .desc-shop-desc {
+    font-size: 0.8rem;
+  }
+}

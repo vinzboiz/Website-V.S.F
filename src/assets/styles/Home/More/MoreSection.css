@@ -1,0 +1,108 @@
+/* 📦 Container chính */
+.featured-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0vh 0 2vh;
+}
+
+/* 🌟 Tiêu đề */
+.featured-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 5vh;
+  text-align: left;
+  letter-spacing: 2px;
+  width: 95%;
+}
+
+/* 🔥 Thanh cuộn ngang */
+.featured-scrollbar {
+  display: flex;
+  gap: 15px;
+  width: 95%;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 5vh 0vw;
+}
+
+/* Ẩn thanh cuộn mặc định */
+.featured-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.featured-scrollbar::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.featured-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.featured-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* 🖼 Ảnh */
+.featured-item {
+  flex: 0 0 250px;
+  position: relative; /* ⚡ Để có thể đặt thông tin lên ảnh */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden; /* Đảm bảo nội dung không tràn ra ngoài */
+}
+
+.featured-item img {
+  width: 100%;
+  height: 60vh;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.featured-item:hover img {
+  transform: scale(1.05);
+}
+
+/* 🎯 Thông tin sản phẩm - Nằm trên ảnh */
+.featured-info {
+  position: absolute; /* 📌 Đặt trên ảnh */
+  bottom: 2vh;
+  left: 1vw;
+  width: 100%;
+  padding: 10px;
+  color: white;
+  text-align: start;
+}
+
+/* 🔤 Tên sản phẩm */
+.featured-name {
+  font-size: 3vh;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/*------------------------REPONSIVE-------------------------------*/
+
+/* 🌟 Desktop - giữ nguyên */
+@media (min-width: 1025px) {
+}
+
+/* 🌟 Tablet (iPad) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .featured-item {
+    flex: 0 0 200px;
+  }
+}
+
+/* 🌟 Mobile (≤ 599px) */
+@media (max-width: 599px) {
+  .featured-item {
+    flex: 0 0 200px;
+  }
+}

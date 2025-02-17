@@ -1,0 +1,10 @@
+.black-marquee {
+  background-color: black;
+  color: white;
+  padding: 3vh 0 4vh;
+}
+.black-marquee .marquee-content {
+  gap: 8vw;
+  margin-left: 4vw;
+  font-size: 2.5vh;
+}

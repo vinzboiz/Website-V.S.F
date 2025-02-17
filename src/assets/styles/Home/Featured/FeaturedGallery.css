@@ -1,0 +1,186 @@
+/* 🖤 Background đen */
+.gallery-background {
+  background: black;
+  padding: 8vh 5vw;
+  border-radius: 45px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🌟 Container chính */
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+/* 🔥 Layout gallery (Chia 2 bên) */
+.gallery-content {
+  display: flex;
+  gap: 2vw;
+  width: 100%;
+  height: auto;
+}
+
+/* 🎨 Đảm bảo gallery-left và gallery-right có chiều cao bằng nhau */
+.gallery-left,
+.gallery-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 🎨 Bên trái - 1 ảnh lớn */
+.gallery-left {
+  align-items: center;
+}
+
+/* 🎨 Bên phải - 4 ảnh (2 hàng, 2 cột) */
+.gallery-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+/* 🖼 Ảnh */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out; /* Hiệu ứng hover */
+}
+
+/* 🎯 Văn bản tên ảnh */
+.gallery-text {
+  position: absolute;
+  bottom: 2.5vh;
+  left: 1.33vw;
+  color: white;
+  font-size: 1.4vw;
+  font-weight: 700;
+  padding: 5px 10px;
+  letter-spacing: 2px;
+  opacity: 1;
+  text-transform: uppercase;
+}
+
+.gallery-left .gallery-text {
+  font-size: 2.8vw;
+}
+
+/* 🔥 Hiệu ứng hover */
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item:hover {
+  opacity: 1;
+}
+/* 🎨 Hiệu ứng mờ trắng cho gallery-item thứ 4 */
+.gallery-right .gallery-item:nth-child(4) {
+  position: relative;
+}
+
+/* 🖼 Ảnh thứ 4 có lớp phủ mờ trắng */
+.gallery-right .gallery-item:nth-child(4)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* Màu trắng mờ */
+  border-radius: 8px;
+}
+/*------------------------REPONSIVE-------------------------------*/
+
+/* 🌟 Desktop - giữ nguyên */
+@media (min-width: 1025px) {
+}
+
+/* 🌟 Tablet (iPad) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .gallery-background {
+    padding: 4vw;
+    border-radius: 18px;
+  }
+  /* 🔥 Layout gallery (Chia 2 bên) */
+  .gallery-content {
+    display: flex;
+    flex-direction: column;
+  }
+  /* 🎨 Đảm bảo gallery-left và gallery-right có chiều cao bằng nhau */
+  .gallery-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .gallery-left img {
+    width: 100%;
+  }
+
+  .gallery-right {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+  }
+  .gallery-left .gallery-text {
+    font-size: 2rem;
+  }
+  .gallery-right .gallery-text {
+    font-size: 1.4rem;
+  }
+}
+
+/* 🌟 Mobile (≤ 599px) */
+@media (max-width: 599px) {
+  .gallery-background {
+    padding: 4vw;
+    border-radius: 18px;
+  }
+  /* 🔥 Layout gallery (Chia 2 bên) */
+  .gallery-content {
+    display: flex;
+    flex-direction: column;
+  }
+  /* 🎨 Đảm bảo gallery-left và gallery-right có chiều cao bằng nhau */
+  .gallery-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .gallery-left img {
+    width: 100%;
+  }
+
+  .gallery-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .gallery-left .gallery-text {
+    font-size: 2rem;
+  }
+  .gallery-right .gallery-text {
+    font-size: 1.4rem;
+  }
+}

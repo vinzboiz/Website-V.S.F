@@ -1,0 +1,185 @@
+/* Container của slider */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Slide */
+.slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Ảnh trong slide */
+.slide-image {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Thông tin sản phẩm */
+.slide-info {
+  cursor: pointer;
+  position: absolute;
+  margin-bottom: 5px;
+  bottom: 40px;
+  left: 30px;
+  color: white;
+  max-width: 70vw;
+}
+
+.product-name {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.product-description {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+/* Chấm tròn */
+.dots-container {
+  position: absolute;
+  bottom: 5.2vh;
+  right: 5vw;
+  display: flex;
+  gap: 1.5vw;
+}
+
+.dot {
+  width: 1.3vh;
+  height: 1.3vh;
+  background-color: #f5f3f47c;
+  border-radius: 50%;
+  transition: all 1s;
+  cursor: pointer;
+  padding: 0.7vh;
+}
+
+.dot:hover {
+  background-color: white;
+}
+
+.active-dot {
+  width: 3vw;
+  background-color: white;
+  border-radius: 15px;
+}
+
+/* Vùng click bên trái/phải để chuyển slide */
+.slider-left,
+.slider-right {
+  position: absolute;
+  top: 0;
+  width: 5vw;
+  height: 100vh;
+  cursor: pointer;
+
+  z-index: 10;
+}
+
+.slider-left {
+  left: 0;
+  top: 0;
+}
+
+.slider-right {
+  right: 0;
+  top: 0;
+}
+
+/*------------------------RESPONSIVE-------------------------------*/
+/* 🌟 Desktop - giữ nguyên */
+@media (min-width: 1025px) {
+}
+
+/* 🌟 Tablet (iPad) */
+@media (min-width: 600px) and (max-width: 1024px) {
+  .slider-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+  }
+  /* Ảnh trong slide */
+  .slide-image {
+    cursor: pointer;
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  /* Thông tin sản phẩm */
+  .slide-info {
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    max-width: 65vw;
+    margin-bottom: 5px;
+    text-align: start; /* Căn giữa nội dung text */
+  }
+
+  .product-name {
+    font-size: 1.5rem;
+    margin-bottom: 3vh;
+    font-weight: 700;
+  }
+  .product-description {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+/* 🌟 Mobile (≤ 599px) */
+@media (max-width: 599px) {
+  .slider-container {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+  }
+  /* Ảnh trong slide */
+  .slide-image {
+    cursor: pointer;
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    object-position: top;
+  }
+  /* Thông tin sản phẩm */
+  .slide-info {
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin-bottom: 5px;
+    color: white;
+    max-width: 60vw;
+    text-align: start;
+  }
+
+  .product-name {
+    font-size: 1rem;
+    margin-bottom: 3vh;
+    font-weight: 700;
+  }
+  .product-description {
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+}
